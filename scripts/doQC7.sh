@@ -74,8 +74,8 @@ echo "Terminal output will be saved too: ${LOGFILE}"
 echo "Calling Command: " 2>&1 | tee ${LOGFILE}
 
 # Call testConnectivity.py
-echo "testConnectivity.py -c ${CHAMBER_NAME} --checkCSCTrigLink -f${STARTINGSTEP} -d -n 200 -o 0x10 --shelf=2 -s5 --writePhases2File" 2>&1 | tee -a ${LOGFILE}
-testConnectivity.py -c ${CHAMBER_NAME} --checkCSCTrigLink -f${STARTINGSTEP} -d -n 200 -o 0x10 --shelf=2 -s5 --writePhases2File 2>&1 | tee -a ${LOGFILE}
+echo "testConnectivity.py -c ${CHAMBER_NAME} --checkCSCTrigLink -f${STARTINGSTEP} -d -o 0x10 --shelf=2 -s5 --writePhases2File" 2>&1 | tee -a ${LOGFILE}
+testConnectivity.py -c ${CHAMBER_NAME} --checkCSCTrigLink -f${STARTINGSTEP} -d -o 0x10 --shelf=2 -s5 --writePhases2File 2>&1 | tee -a ${LOGFILE}
 
 # Move the GBT phase scan log to ${DATA_PATH}/${CHAMBER_NAME}
 phaseScanLog=${ELOG_PATH}/gbtPhaseSettings.log
@@ -105,8 +105,8 @@ else
     echo "Connectivity Testing Probably Didn't Complete Successfully" 2>&1 | tee -a ${LOGFILE}
 fi
 
-echo "ls -lhtr ${DATA_PATH}/${CHAMBER_NAME}" 2>&1 | tee -a ${LOGFILE}
-ls -lhtr ${DATA_PATH}/${CHAMBER_NAME} 2>&1 | tee -a ${LOGFILE}
+echo "ls -lhtr ${DATA_PATH}/${CHAMBER_NAME}/*${scandate}*" 2>&1 | tee -a ${LOGFILE}
+ls -lhtr ${DATA_PATH}/${CHAMBER_NAME}/*${scandate}* 2>&1 | tee -a ${LOGFILE}
 
 echo chmod g+rw -R ${DATA_PATH}/${CHAMBER_NAME}
 chmod g+rw -R ${DATA_PATH}/${CHAMBER_NAME}
