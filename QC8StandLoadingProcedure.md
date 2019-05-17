@@ -4,7 +4,7 @@
 ## Stand Layout
 ---------------
 
-![Cosmic Stand Layout](URL)
+![Cosmic Stand Layout](https://github.com/bdorney/sw_utils/blob/feature/qc8procedures/StandNomenclature.png)
 
 ## Detector Info
 ----------------
